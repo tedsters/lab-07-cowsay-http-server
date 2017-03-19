@@ -14,6 +14,7 @@
 * add a eslintrc
 * add a gitignore
 * add a readme with project description
+* include any npm scripts for starting server, linting, testing, etc
 * test your code
   * ensure that all of your methods have test coverage
   * write tests which start your server, send and receive, and confirm functionality
