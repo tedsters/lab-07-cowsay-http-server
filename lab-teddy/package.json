@@ -1,5 +1,5 @@
 {
-  "name": "cowsay",
+  "name": "cowsay-lab",
   "version": "1.0.0",
   "description": "Cowsay server",
   "main": "server.js",
@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "mocha",
-    "start": "node server.js"
+    "start": "node server.js",
+    "lint": ".eslintrc"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,10 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "mocha": "^3.3.0"
+  },
+  "dependencies": {
+    "cowsay": "^1.1.9"
   }
 }

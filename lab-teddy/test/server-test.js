@@ -21,19 +21,19 @@ describe('Server module', function(){
         .send({})
         .end((err, res) =>{
           expect(res.status).to.equal(400);
+          done();
         });
-        done();
       });
     });
     describe('/cowsay endpoint', function(){
       it('should respond with a 200 on proper request', done => {
         chai.request(server)
-        .post('/')
-        .send({})
+        .post('/cowsay')
+        .send({text: 'hello'})
         .end((err, res) => {
           expect(res.status).to.equal(200);
+          done();
         });
-        done();
       });
       it('should respond with a 400 on bad request', done => {
         chai.request(server)
@@ -41,8 +41,8 @@ describe('Server module', function(){
         .send({})
         .end((err, res) => {
           expect(res.status).to.equal(400);
+          done();
         });
-        done();
       });
     });
   });
@@ -54,19 +54,19 @@ describe('Server module', function(){
         .send({})
         .end((err, res) => {
           expect(res.status).to.equal(400);
+          done();
         });
-        done();
       });
     });
     describe('/cowsay endpoint', function(){
       it('should respond with a 200 on proper request', done => {
         chai.request(server)
-        .post('/')
-        .send({})
+        .post('/cowsay')
+        .send({text: 'hello'})
         .end((err, res) => {
           expect(res.status).to.equal(200);
+          done();
         });
-        done();
       });
       it('should respond with a 400 on bad request', done =>{
         chai.request(server)
@@ -74,8 +74,8 @@ describe('Server module', function(){
         .send({})
         .end((err, res) => {
           expect(res.status).to.equal(400);
+          done();
         });
-        done();
       });
     });
   });

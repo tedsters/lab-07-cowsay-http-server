@@ -1,9 +1,9 @@
 'use strict';
 
-const bodyParser = require('./lib/body-parser');
+const bodyParser = require('./lib/body-parse');
 const http = require('http');
 const url = require('url');
-const queryString = require('queryString');
+const queryString = require('querystring');
 const cowsay = require('cowsay');
 const PORT = process.env.PORT || 8080;
 
@@ -14,7 +14,7 @@ const server = module.exports = http.createServer(function(req, res){
     if(req.url.pathname === '/cowsay'){
       bodyParser(req, function(err){
         if(err)console.error(err);
-        let message = cowsay.say({test: req.body.text});
+        let message = cowsay.say({text: req.body.text, f: 'dragon'});
         res.writeHead(200, {'Content-Type': 'text/plain'});
         res.write(message);
         res.end();
@@ -37,7 +37,7 @@ const server = module.exports = http.createServer(function(req, res){
     } else {
       let message = cowsay.say({text: 'bad request\ntry localhost:8080/cowsay with a proper body'});
       res.writeHead(400, {'Content-Type': 'text/plain'});
-      res.message(message);
+      res.write(message);
       res.end();
     }
   }
