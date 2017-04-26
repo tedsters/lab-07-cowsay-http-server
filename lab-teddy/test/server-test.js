@@ -1,7 +1,6 @@
 'use strict';
 
 const server = require('../server');
-const cowsay = require('cowsay');
 const chai = require('chai');
 const http = require('chai-http');
 const expect = chai.expect;
