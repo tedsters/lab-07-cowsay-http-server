@@ -49,7 +49,7 @@ describe('Server module', function(){
     describe('/ endpoint', function(){
       it('should respond with a 400 on bad request', done => {
         chai.request(server)
-        .post('/duh')
+        .get('/duh')
         .send({})
         .end((err, res) => {
           expect(res.status).to.equal(400);
@@ -69,7 +69,7 @@ describe('Server module', function(){
       });
       it('should respond with a 400 on bad request', done =>{
         chai.request(server)
-        .post('/')
+        .get('/')
         .send({})
         .end((err, res) => {
           expect(res.status).to.equal(400);
